@@ -57,7 +57,7 @@ public class AppAdapter extends RecyclerView.Adapter {
             }
         });
         ((AppBeanViewHolder) viewHolder).tv_content.setText(appBean.getAppName());
-        OkHttpUtils.get().url(appBean.getAppLogo()).build().execute(new BitmapCallback() {
+        OkHttpUtils.get().url(API.BASE_URL + appBean.getAppLogo()).build().execute(new BitmapCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
 

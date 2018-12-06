@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
+                requestAppList();
             }
         });
 
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     private List<AppBean> mAppBeanList = new ArrayList<>();
 
     private void requestAppList() {
-        String url = "http://www.csdn.net/";
+        String url = API.BASE_URL + API.APP_LIST;
         OkHttpUtils
                 .get()
                 .url(url)
