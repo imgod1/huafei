@@ -1,0 +1,19 @@
+def androidSupportVersion = '28.0.0'
+ext {
+    android = [
+            compileSdkVersion: 28,
+//            buildToolsVersion: "26.0.2",
+            buildToolsVersion: "28.0.2",
+            minSdkVersion    : 15,
+//            targetSdkVersion : 27,
+            //避免 26 27上出现ECClientService (has extras) }: app is in background uid UidRecord错误
+            targetSdkVersion : 28,
+    ]
+
+    dependencies = [
+            //appcompatV7 ': ' com.android.support: appcompat - v7: 23.2.1 ',
+            // appcompatV7= "com.android.support:appcompat-v7:$androidSupportVersion",
+            appcompatV7: "com.android.support:appcompat-v7:$androidSupportVersion",
+            design     : 'com.android.support:design:23.2.1'
+    ]
+}

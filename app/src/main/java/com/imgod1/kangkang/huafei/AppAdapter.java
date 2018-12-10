@@ -48,7 +48,7 @@ public class AppAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder viewHolder, int i) {
         AppBean appBean = mAppBeanList.get(i);
         final int position = i;
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        ((AppBeanViewHolder) viewHolder).llayout_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mOnItemClickListener) {
@@ -78,11 +78,13 @@ public class AppAdapter extends RecyclerView.Adapter {
     }
 
     public static class AppBeanViewHolder extends RecyclerView.ViewHolder {
+        public View llayout_root;
         public ImageView iv_logo;
         public TextView tv_content;
 
         public AppBeanViewHolder(@NonNull View itemView) {
             super(itemView);
+            llayout_root = itemView.findViewById(R.id.llayout_root);
             iv_logo = itemView.findViewById(R.id.iv_logo);
             tv_content = itemView.findViewById(R.id.tv_content);
         }

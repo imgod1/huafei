@@ -14,8 +14,9 @@ import java.util.List;
  */
 public class AppBeanResponse {
 
+
     /**
-     * data : [{"remark":"特殊标记","appName":"test","appLogo":"http://pic.qiantucdn.com/58pic/18/14/82/56F58PICahj_1024.jpg","apkUrl":"imtt.dd.qq.com/16891/DD9C70F0C3C361F6BA3483341FB58567.apk"}]
+     * data : [{"remark":"test","appName":"邦邦小助手","appLogo":"bangbang_logo.png","apkUrl":"邦邦小助手1.6.apk","packageName":"test"},{"remark":"test","appName":"蜜蜂小助手","appLogo":"mifeng_icon.png","apkUrl":"蜜蜂小助手1.3.apk","packageName":"test"},{"remark":"test","appName":"玖玖小助手","appLogo":"jiujiushou_logo.png","apkUrl":"玖玖小助手1.0.apk","packageName":"test"}]
      * showMessage : 操作成功
      * status : 100
      */
@@ -50,16 +51,18 @@ public class AppBeanResponse {
 
     public static class AppBean {
         /**
-         * remark : 特殊标记
-         * appName : test
-         * appLogo : http://pic.qiantucdn.com/58pic/18/14/82/56F58PICahj_1024.jpg
-         * apkUrl : imtt.dd.qq.com/16891/DD9C70F0C3C361F6BA3483341FB58567.apk
+         * remark : test
+         * appName : 邦邦小助手
+         * appLogo : bangbang_logo.png
+         * apkUrl : 邦邦小助手1.6.apk
+         * packageName : test
          */
 
         private String remark;
         private String appName;
         private String appLogo;
         private String apkUrl;
+        private String packageName;
 
         public String getRemark() {
             return remark;
@@ -91,6 +94,14 @@ public class AppBeanResponse {
 
         public void setApkUrl(String apkUrl) {
             this.apkUrl = apkUrl;
+        }
+
+        public String getPackageName() {
+            return packageName;
+        }
+
+        public void setPackageName(String packageName) {
+            this.packageName = packageName;
         }
     }
 }

@@ -1,7 +1,9 @@
 package com.imgod1.kangkang.huafei;
 
 import android.app.Application;
+import android.content.Context;
 
+import com.morgoo.droidplugin.PluginHelper;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -22,7 +24,15 @@ public class HuaFeiApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //这里必须在super.onCreate方法之后，顺序不能变
+        PluginHelper.getInstance().applicationOnCreate(getBaseContext());
         initLibs();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        PluginHelper.getInstance().applicationAttachBaseContext(base);
+        super.attachBaseContext(base);
     }
 
     //初始化一些库
